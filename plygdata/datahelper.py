@@ -110,7 +110,7 @@ def get_playground_axes(fig):
     ax.get_xticklabels()[TICKS_MIDDLE].set_color("#333333")
     ax.get_yticklabels()[TICKS_MIDDLE].set_color("#333333")
     #ax.grid(color='white', linestyle='-')
-    ax.grid(b=False)
+    #ax.grid(b=False)
     return ax
 
 
