@@ -220,13 +220,12 @@ def predict_classes_proba(trained_model, x, batch_size=32, verbose=0):
     return discretized, probability
 
 
-def draw_decision_boundary(fig, ax, node_id=InputType.X1, trained_model=None, discretize=False, enable_colorbar=True):
+def draw_decision_boundary(fig, ax, node_id=InputType.X1, prob=None, discretize=False, enable_colorbar=True):
 
-    if trained_model is None:
+    if prob is None:
         im = HeatMap.updateBackground(ax, None, node_id, discretize)
     else:
-        boundary_array = Player.get_boundary_array()
-        probability = predict_proba(trained_model, boundary_array)
+        probability = prob
         im = HeatMap.updateBackground(ax, None, None, discretize, probability)
 
     if enable_colorbar:
